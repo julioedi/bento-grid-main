@@ -30,4 +30,4 @@ The two components in the left column on desktop are placed at the bottom on mob
 ### Links
 Challenge: https://www.frontendmentor.io/challenges/browser-extension-manager-ui-yNZnOfsMAp
 
-Live: https://challenges.julioedi.com/browser-extension-manager-ui
+Live: https://julioedi.github.io/bento-grid-main/
