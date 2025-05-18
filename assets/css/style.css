@@ -1,0 +1,346 @@
+/* latin-ext */
+@font-face {
+    font-family: 'DM Sans';
+    font-style: italic;
+    font-weight: 400 500;
+    src: url(../fonts/italic_ext.woff2) format('woff2');
+    font-display: swap;
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* latin */
+@font-face {
+    font-family: 'DM Sans';
+    font-style: italic;
+    font-weight: 400 500;
+    src: url(../fonts/italic.woff2) format('woff2');
+    font-display: swap;
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* latin-ext */
+@font-face {
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 100 1000;
+    src: url(../fonts/normal_ext.woff2) format('woff2');
+    font-display: swap;
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* latin */
+@font-face {
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 100 1000;
+    src: url(../fonts/normal.woff2) format('woff2');
+    font-display: swap;
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+:root {
+    --purple: #7650DC;
+    --purple_100: #DACFFC;
+    --yellow: #FFCC69;
+    --yellow_100: #F9EEE1;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'DM Sans';
+    background-color: #F5F5F5;
+    color: #121212;
+}
+
+* {
+    box-sizing: border-box;
+    position: relative;
+}
+
+main {
+    min-width: 100dvw;
+    min-height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+}
+
+.largeText {
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 1;
+    letter-spacing: -0.05em;
+    max-width: 200px;
+}
+
+#root {
+    width: 100%;
+    height: 100%;
+    max-width: 1120px;
+    max-height: 880px;
+    display: grid;
+    grid-template-areas:
+        "createwrite social social schedule"
+        "createwrite manage maintain schedule"
+        "createwrite audience grow grow";
+    gap: 24px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    /* Four equal columns */
+    grid-template-rows: 324px 248px 248px;
+    /* Adjust based on content height */
+}
+
+h2 {
+    margin: 0;
+}
+
+#root>div {
+    border-radius: 16px;
+    overflow: hidden;
+    padding: 24px;
+    gap: 16px;
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+}
+
+#root>.createwrite {
+    gap: 24px;
+    grid-area: createwrite;
+    padding: 0;
+    grid-column: span 1;
+}
+
+.createwrite>div {
+    flex: 1;
+    border-radius: inherit;
+    padding: 24px;
+    gap: 24px;
+}
+
+.create {
+    background-color: var(--yellow_100);
+    grid-column: span 1;
+    display: grid;
+    align-content: center;
+    align-items: center;
+}
+
+.create i {
+    font-weight: 500;
+    color: var(--purple);
+}
+
+.create img {
+    max-width: 180px;
+    height: auto;
+}
+
+.write {
+    background-color: var(--yellow);
+    display: grid;
+    align-content: space-between;
+
+}
+
+.write img {
+    height: 224px;
+    width: auto;
+}
+
+#root>.social {
+    background-color: var(--purple);
+    grid-area: social;
+    color: #fff;
+    text-align: center;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+}
+
+.social h2 {
+    font-size: 48px;
+    max-width: 480px;
+    margin: 12px 0;
+}
+
+.social span {
+    color: var(--yellow);
+}
+
+.social img {
+    max-width: 180px;
+    height: auto;
+}
+
+.schedule {
+    grid-area: schedule;
+    background-color: var(--purple_100);
+}
+
+.schedule .wrap {
+    width: 100%;
+    display: flex;
+    height: 320px;
+}
+
+.schedule .wrap img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: auto;
+}
+
+.maintain {
+    grid-area: maintain;
+    background: var(--yellow);
+}
+
+.maintain img {
+    width: 100%;
+    height: auto;
+}
+
+.manage {
+    grid-area: manage;
+    display: grid;
+    justify-content: space-between;
+    flex-direction: row;
+    background: #fff;
+}
+
+.manage .wrap {
+    height: 70px;
+    width: 100%;
+}
+
+.manage .wrap img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: auto;
+    filter: drop-shadow(0 12px 12px rgba(0, 0, 0, 0.06));
+}
+
+#root>.audience {
+    grid-area: audience;
+    background: #fff;
+    display: grid;
+    align-content: space-between;
+}
+
+.audience img {
+    max-width: 180px;
+    height: auto;
+}
+
+.audience h2 {
+    margin: 0;
+    font-size: 44px;
+    padding-bottom: 16px;
+}
+
+.audience p {
+    margin: 0;
+}
+
+#root>.grow {
+    grid-area: grow;
+    background: var(--purple);
+    color: #fff;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+}
+
+.grow img {
+    max-width: 40%;
+}
+
+.grow h2 {
+    flex: 1
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+@media (max-width:1180px) {
+    main{
+        position: relative;
+        height: max-content;
+    }
+    #root {
+        grid-template-areas:
+        "social social"
+        "manage maintain"
+        "audience audience"
+        "grow grow"
+        "createwrite schedule";
+        grid-template-columns: 1fr 1fr ;
+        grid-template-rows: unset;
+        max-height: unset;
+        height: unset;
+    }
+    .schedule{
+        justify-content: center;
+    }
+    #root>.createwrite{
+        
+    }
+}
+@media (max-width: 540px){
+    #root{
+        grid-template-areas:
+        "social"
+        "manage"
+        "maintain"
+        "schedule"
+        "grow"
+        "audience"
+        "createwrite";
+        grid-template-columns: unset;
+    }
+    .largeText{
+        max-width: unset;
+    }
+    .maintain h2{
+        max-width: 280px;
+    }
+    .maintain .wrap{
+        max-width: 280px;
+        max-height: 140px;
+    }
+    .schedule{
+        text-align: center;
+    }
+    .schedule .wrap{
+        display: flex;
+    }
+    .schedule .wrap img{
+        position: relative;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+    #root>.grow{
+        flex-direction: column;
+        text-align: center;
+    }
+    #root>.grow img,
+    #root>.grow h2{
+        max-width: 230px;
+    }
+}
